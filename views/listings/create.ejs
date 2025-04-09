@@ -1,0 +1,88 @@
+<% layout('/layouts/boilerplate') -%>
+<body>
+    <br>
+    <h2>Create a listing: </h2>
+    <br>
+    <div class="row row-cols-lg-10">
+        <div class="col-8 offset-2">
+            <form method="post" action="/listings/create" class="needs-validation" novalidate enctype="multipart/form-data">
+                <label for="title" class="form-label">Title: </label>
+                <input type="text" placeholder="title" id="title" name="listing[title]" required class="form-control">
+                <div class="invalid-feedback">
+                    Title is needed.
+                  </div>
+                  <div class="valid-feedback">
+                    Looks good
+                  </div>
+                <br>
+               
+                <label for="description" class="form-label">Description :</label>
+            
+                <textarea name="listing[description]" id="description" class="form-control" required></textarea>
+                <div class="invalid-feedback">
+                    Enter description.
+                  </div>
+                  <div class="valid-feedback">
+                    Looks good
+                  </div>
+                <br>
+                
+        
+                <!-- <label for="img_url" class="form-label">Enter img url:</label>
+        
+                <input type="text" placeholder="image url" name="listing[image][url]" class="form-control" id="img_url" 
+    value="<%= listing?.image?.url || 'https://images.unsplash.com/photo-1578645510447-e20b4311e3ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDF8fGNhbXBpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60' %>"> -->
+
+                <br>
+
+                <label for="img_url" class="form-label">upload image</label>
+        
+                <input type="file"  name="listing[image][url]" class="form-control" id="img_url" >
+
+                
+        
+                <label for="price" class="form-label">Price : </label>
+                
+                <input type="text" placeholder=&#8377; name="listing[price]" class="form-control"  id="price" required>
+                <div class="invalid-feedback">
+                    Enter valid price.
+                  </div>
+                  
+                <br>
+               
+                <div class="row">
+                   <div class="col-md-6">
+                    <label for="location" class="form-label">Location : </label>
+            
+                    <input type="text" placeholder="location" id="location" name="listing[location]" class="form-control" required>
+                    <div class="invalid-feedback">
+                        Enter valid location.
+                      </div>
+                      <div class="valid-feedback">
+                        Looks good
+                      </div>
+                    
+
+                    <br>
+                   </div>
+        
+                
+                <div class="col-md-6">
+                    <label for="country" class="form-label">Country: </label>
+               
+                <input type="text" placeholder="country" id="country" name="listing[country]" class="form-control" required>
+                <div class="invalid-feedback">
+                    Enter valid country name.
+                  </div>
+                  
+                </div>
+                </div>
+                <br>
+                <button class="btn btn-primary">Create</button>
+                <br>
+            </form>
+        </div>
+    </div>
+    <br>
+    
+</body>

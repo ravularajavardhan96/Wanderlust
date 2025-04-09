@@ -1,0 +1,68 @@
+<style>
+  .search-btn{
+    background-color: #fe424d;
+    color:#fff;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 25px;
+   /* padding: 0.2rem; */
+   padding: 0 0.8rem 0 0.8rem;
+
+  }
+  .search-btn:hover{
+    background-color: #fe424d;
+    color:#fff;
+
+  }
+
+ .search-btn i{
+    display: inline;
+  }
+
+  .search-input{
+    border-radius: 25px;
+    padding: 0.5rem 2rem 0.5rem 1rem;
+    border: 2px solid rgb(198, 193, 193);
+  }
+</style>
+<nav class="navbar navbar-expand-md bg-body-light sticky-top border-bottom">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass"></i></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class=" collapse navbar-collapse d-flex justify-content-between nav-div" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+        
+          <a class="nav-link " href="/listings">Explore</a>
+        
+        </div>
+
+        <form class="d-flex " role="search">
+          <input class="form-control me-2 search-input" type="search" placeholder="Search Destinations" >
+          <button class="btn search-btn" type="submit"> <i class="fa-solid fa-magnifying-glass"></i> &nbsp;&nbsp;Search</button>
+        </form>
+
+        
+
+        <div class="navbar-nav home">
+          <a class="nav-link" href="/listings/create">Airbnb your home</a> 
+          <%if(currUser){%>
+            <a class="nav-link" href="/user/logout"><b>Logout</b></a> 
+  
+         <% }%>
+          <%if(!currUser){%>
+            <a class="nav-link"  href="/user/login"><b>Login</b></a>
+            <a class="nav-link" href="/user/signup"><b>Sign up</b></a>
+
+         <% }%>
+
+        
+          
+         
+        </div>
+      </div>
+    </div>
+  </nav>
+  <br>

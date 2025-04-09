@@ -1,0 +1,171 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    padding: 3rem;
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: 100vh !important;
+    font-size: 1.2rem !important;
+}
+
+.container {
+    flex: 1;
+}
+
+nav {
+    background-color: white;
+    height: 5rem;
+    position: fixed !important;
+}
+
+.navbar-brand {
+    font-size: 1.7rem !important;
+    color:#fe424d !important;
+
+}
+
+nav a {
+    color: black !important;
+}
+/* .home{
+    padding: 2px !important;
+    background-color:rgb(45, 142, 226) !important ;
+    text-align: center !important;
+    margin-bottom: 75px !important;
+
+/* } */ 
+.nav-left{
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-direction: row !important;
+    margin-left: 20px !important;
+    background-color: aqua !important;
+
+}
+/* .nav-left a{
+    margin: 0 !important;
+    padding: 0 !important;
+} */
+
+.home{
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-direction: row !important;
+    margin-right: 20px !important;
+    /* background-color: aquamarine !important; */
+}
+.home a{
+    margin: 5px !important;
+}
+
+
+/* Footer */
+
+.f-info {
+    background-color: #ebebeb;
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 0;
+    position: relative;
+    bottom: 0;
+    left: 0;
+}
+
+.f-info-links, .f-info-socials {
+    width: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.f-info-socials i {
+    font-size: 1.3rem;
+    margin: 1rem;
+}
+
+.f-info-links a {
+    text-decoration: none;
+    font-size: 1.1rem;
+    margin: 1rem;
+    color: #222222;
+}
+
+.f-info-links a:hover {
+    text-decoration: underline;
+}
+
+/* Card Styling */
+
+.card {
+    border: none !important;
+    margin-bottom: 5rem;
+    font-weight: 400;
+    color: #222222 !important;
+}
+
+.card img {
+    height: 20rem;
+    border-radius: 1.3rem;
+}
+
+.card-text {
+    text-decoration: none;
+}
+
+.card-img-overlay {
+    opacity: 0;
+}
+
+.card-img-overlay:hover {
+    opacity: 0.2;
+    background-color: white;
+}
+
+.card-link {
+    text-decoration: none;
+}
+
+/* show page */
+
+.show-img {
+    height: 37vh !important;
+}
+
+
+/* //REVIEWS */
+
+.review{
+    border:2px solid rgba(132, 132, 130,0.3);
+    border-radius: 4px;
+
+}
+
+.authenticate{
+   /* margin-left:45rem !important; */
+   background-color: aquamarine !important;
+}
+
+.nav-div{
+    width:93vw !important;
+}
+
+/* MAP STYLING */
+
+#map { 
+    height: 340px;
+    width: 50vw;
+    border-radius: 10px;
+}
+/* .marker {
+    opacity: 0.2; /* Adjust between 0 (invisible) to 1 (fully visible) */
+  /* } */ 
