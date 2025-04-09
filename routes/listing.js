@@ -8,7 +8,7 @@ const passport = require("passport");
 const User = require("../models/user")
 const {isLogged , isOwner} = require("../middleware");
 const {validateListing}=require("../middleware");
-const listingController = require("../controllers/lisitngs")
+const listingController = require("../controllers/listings");
 const multer  = require('multer')
 const {storage} = require("../cloudConfig");
 const upload = multer({ storage })
@@ -26,7 +26,7 @@ router.route("/create")
 .post(isLogged,
     upload.single("listing[image][url]"),
     validateListing,
-    wrapAsync(listingController.lisitngCreate));
+    wrapAsync(listingController.listingCreate));
 
 
 // UPDATE ROUTE 
@@ -37,7 +37,7 @@ router.route("/:id")
     upload.single("listing[image][url]"),
     validateListing,
     wrapAsync(listingController.listingUpdate))
-.get(wrapAsync(listingController.lisitngShow))
+.get(wrapAsync(listingController.listingShow))
 .delete(isLogged,isOwner,wrapAsync(listingController.listingDelete));
 
 
