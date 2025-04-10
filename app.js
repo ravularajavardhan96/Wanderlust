@@ -82,9 +82,9 @@ app.listen(8080,()=>{
 });
 
 // ROOT
-// app.get("/",wrapAsync(async (req,res)=>{
-//     res.send("This is a root");
-// }));
+app.get("/",wrapAsync(async (req,res)=>{
+    res.render("/listings");
+}));
 
 //DEMO USER
 // app.get("/demouser",async (req,res)=>{
