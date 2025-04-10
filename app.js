@@ -83,7 +83,7 @@ app.listen(8080,()=>{
 
 // ROOT
 app.get("/",wrapAsync(async (req,res)=>{
-    res.render("/listings");
+    res.render("listings");
 }));
 
 //DEMO USER
