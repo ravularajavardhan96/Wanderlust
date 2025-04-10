@@ -1,5 +1,5 @@
 const Listing = require("../models/sampleListing");
-const mbxGeocoding = require('@mapbox/mapbox-sdk/services/Geocoding');
+const mbxGeocoding = require('@mapbox/mapbox-sdk/services/geocoding');
 const mapToken = process.env.MAP_TOKEN;
 const geocodingClient = mbxGeocoding({ accessToken: mapToken });
 
@@ -19,9 +19,9 @@ module.exports.listingUpdate = async (req,res)=>{
         let url = req.file.path;
         let filename = req.file.filename;
         listing.image = {url,filename};
-        listing.save();
+        await listing.save();
     }
-    req.flash("success", "Lisitng updated");
+    req.flash("success", "Listing updated");
    res.redirect("/listings");
 }
 
@@ -30,7 +30,7 @@ module.exports.renderListingForm = (req,res)=>{
    
 };
 
-module.exports.lisitngCreate = async (req,res,next)=>{
+module.exports.listingCreate = async (req,res,next)=>{
   let resp= await geocodingClient.forwardGeocode({query: req.body.listing.location , limit: 1}).send();
   
 
@@ -50,11 +50,11 @@ listing2.image = {url,filename};
 listing2.geometry =  resp.body.features[0].geometry;
 let savdelist = await listing2.save();
 // console.log(savdelist);
-req.flash("success", "New lisitng added");
+req.flash("success", "New listing added");
 res.redirect("/listings");
 }
 
-module.exports.lisitngShow = async (req,res)=>{
+module.exports.listingShow = async (req,res)=>{
     let {id} = req.params;
     let listing = await Listing.findById(`${id}`).populate(
         {
@@ -87,7 +87,7 @@ module.exports.listingDelete = async (req,res)=>{
     let delList =await Listing.findOneAndDelete({_id:id});
     }
     await delListing();
-    req.flash("success", "Lisitng deleted");
+    req.flash("success", "Listing deleted");
     res.redirect("/listings");
     
     }
