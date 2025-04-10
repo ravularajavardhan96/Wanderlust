@@ -84,7 +84,7 @@ app.listen(8080,()=>{
 // ROOT
 app.get("/",wrapAsync(async (req,res)=>{
     // res.send("This is live");
-    res.render("listings");
+    res.redirect("\listings");
 }));
 
 //DEMO USER
