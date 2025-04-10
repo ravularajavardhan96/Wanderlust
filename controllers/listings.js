@@ -13,7 +13,7 @@ module.exports.listingIndex = async (req,res)=>{
 module.exports.listingUpdate = async (req,res)=>{
     console.log(req.user);
     let {id}=req.params;
-    let listing = await Listing.findByIdAndUpdate(`${id}`,{...req.body.listing});
+    let listing = await Listing.findByIdAndUpdate(id,{...req.body.listing});
     // if(typeof req.file!=undefined){
     if(req.file){
         let url = req.file.path;
@@ -48,6 +48,11 @@ let listing2 = await new Listing(listing)
 listing2.Owner = req.user._id;
 listing2.image = {url,filename};
 listing2.geometry =  resp.body.features[0].geometry;
+if (!resp.body.features.length) {
+    req.flash("error", "Invalid location!");
+    return res.redirect("/listings/new");
+}
+
 let savdelist = await listing2.save();
 // console.log(savdelist);
 req.flash("success", "New listing added");
