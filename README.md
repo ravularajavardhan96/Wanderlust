@@ -1,18 +1,30 @@
-# Wanderlust – Travel Booking App
+# 🌍 Wanderlust
 
-Wanderlust is a MERN stack-based travel booking application that helps users discover, plan, and book trips with an intuitive user interface and secure authentication. The project is designed to showcase full-stack development skills, including user authentication, cloud image storage, and dynamic data handling.
+**Wanderlust** is a full-stack travel listing web application that allows users to explore destinations, view them on an interactive map, register/login, add new listings with images, and post reviews.  
+This project was built as part of the **Delta 5.0 MERN Stack Batch** from **Apna College**.
 
-## 💻 Tech Stack
+🔗 **Live Demo** → [Wanderlust on Render](https://wanderlust-dqbl.onrender.com)
 
-**Backend:**  
-- Node.js  
-- Express.js  
-- MongoDB (via Mongo Atlas)  
-- Passport.js (Authentication)  
-- Cloudinary (Image Storage)  
-- Express Sessions & Cookies (for Session Management)
+---
 
-**Frontend:**
-- EJS (for templating)  
-- Bootstrap (for responsive layout)  
-- Mapbox (for map integration)
+## 🚀 Tech Stack
+
+- **Frontend**: *EJS*, *Bootstrap*, *HTML5*, *CSS3*
+- **Backend**: *Node.js*, *Express.js* (MVC architecture)
+- **Database**: *MongoDB Atlas*
+- **Authentication**: *Passport.js* (Local strategy)
+- **File Uploads**: *Multer* + *Cloudinary*
+- **Maps**: *Mapbox*
+- **Session & Flash**: *express-session*, *connect-mongo*, *connect-flash*
+- **Icons**: *Font Awesome*
+
+---
+
+## ✨ Features
+
+- 🌍 Explore listings with Mapbox-powered interactive maps
+- 🧭 Add, edit, and delete personalized travel experiences
+- 🔐 Register/login with secure session management
+- 🖼 Upload and manage multiple images with Cloudinary
+- 💬 Review system with flash messaging and feedback
+- 🎨 Responsive UI built using Bootstrap
